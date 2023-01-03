@@ -128,7 +128,7 @@ public:
   bool hasStdExtZvamo() const { return HasStdExtZvamo; }
   bool hasStdExtZfh() const { return HasStdExtZfh; }
   bool is64Bit() const { return HasRV64; }
-  bool isRV32E() const { return IsRV32E; }
+  bool isRV32E() const { return true; }
   bool hasCheri() const { return HasCheri; }
   bool isCapMode() const { return IsCapMode; }
   bool enableLinkerRelax() const { return EnableLinkerRelax; }

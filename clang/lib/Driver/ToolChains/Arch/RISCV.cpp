@@ -308,17 +308,7 @@ static bool getArchFeatures(const Driver &D, StringRef MArch,
     D.Diag(diag::err_drv_invalid_riscv_arch_name)
         << MArch << "first letter should be 'e', 'i' or 'g'";
     return false;
-  case 'e': {
-    StringRef Error;
-    // Currently LLVM does not support 'e'.
-    // Extension 'e' is not allowed in rv64.
-    if (HasRV64)
-      Error = "standard user-level extension 'e' requires 'rv32'";
-    else
-      Error = "unsupported standard user-level extension 'e'";
-    D.Diag(diag::err_drv_invalid_riscv_arch_name) << MArch << Error;
-    return false;
-  }
+  case 'e':
   case 'i':
     break;
   case 'g':
